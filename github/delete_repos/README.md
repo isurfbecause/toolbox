@@ -13,6 +13,9 @@ This script allows you to delete multiple GitHub repositories at once. Using `fz
 I created this script to help me remove GitHub repos I haven't used in a long time.
 
 ## Screenshots
+<img width="406" alt="Screenshot 2024-10-26 at 18 11 17" src="https://github.com/user-attachments/assets/277fe9bf-09e0-43a7-a356-1adb6cd34a21">
+
+<img width="604" alt="Screenshot 2024-10-26 at 18 11 32" src="https://github.com/user-attachments/assets/a5bbf212-643c-40a4-93c3-73e0da47c20e">
 
 ## Features
 
