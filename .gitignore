@@ -1,0 +1,45 @@
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
+
+# Ignore backup files
+*~
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Ignore log files
+*.log
+
+# Ignore compiled binaries and executables
+*.out
+*.exe
+
+# Ignore environment variable files
+.env
+.env.local
+
+# Ignore dependency files (optional)
+node_modules/
+vendor/
+
+# Ignore IDE or editor-specific files
+.idea/
+.vscode/
+*.code-workspace
+
+# Ignore temporary files created by Bash scripts
+*.lock
+*.pid
+
+# Ignore any shell history files
+.bash_history
+.zsh_history
+
+# Ignore archive files
+*.tar
+*.gz
+*.zip
+*.7z
+*.rar
