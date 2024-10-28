@@ -2,20 +2,37 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+BASE_URL=https://api.github.com
+ERRORS=false
+
 if [ -f .env ]; then
   # shellcheck source=/dev/null
   . .env
 else
   echo ".env not found"
-  exit 1
 fi
 
+# Validate env vars
+if [ -z "${USERNAME}" ]; then
+  echo "USERNAME is not defined"
+  ERORRS='true'
+fi
+
+if [ -z "${GITHUB_ACCESS_TOKEN}" ]; then
+  echo "GITHUB_ACCESS_TOKEN is not defined"
+  ERORRS='true'
+fi
+
+# Check fzf is installed
 if ! command -v fzf &>/dev/null; then
   echo "fzf is required"
-  exit 1
+  ERORRS='true'
 fi
 
-BASE_URL=https://api.github.com
+if [[ "${ERORRS}" == 'true' ]]; then
+  echo "Please see the following errors above"
+  exit 1
+fi
 
 REPOS=$(curl -s -u "$USERNAME:$GITHUB_ACCESS_TOKEN" "${BASE_URL}/users/$USERNAME/repos" | jq -r '.[].full_name' | fzf --multi --preview "echo {}")
 
